@@ -1,0 +1,19 @@
+CREATE TABLE store_database (id INTEGER PRIMARY KEY, category TEXT, item TEXT, size TEXT, price INTEGER);
+INSERT INTO store_database (id, category, item, size, price) VALUES (1, "shirt", "tank-top", "Small", 9.99);
+INSERT INTO store_database (id, category, item, size, price) VALUES (2, "shirt", "tank-top", "Medium", 9.99);
+INSERT INTO store_database (id, category, item, size, price) VALUES (3, "shirt", "tank-top", "Large", 9.99);
+INSERT INTO store_database (id, category, item, size, price) VALUES (4, "shirt", "crew-neck", "Small", 15.00);
+INSERT INTO store_database (id, category, item, size, price) VALUES (5, "shirt", "crew-neck", "Medium", 15.00);
+INSERT INTO store_database (id, category, item, size, price) VALUES (6, "shirt", "crew-neck", "Large", 15.00);
+INSERT INTO store_database (id, category, item, size, price) VALUES (7, "pants", "shorts", "Small", 20.00);
+INSERT INTO store_database (id, category, item, size, price) VALUES (8, "pants", "shorts", "Medium", 20.00);
+INSERT INTO store_database (id, category, item, size, price) VALUES (9, "pants", "shorts", "Large", 20.00);
+INSERT INTO store_database (id, category, item, size, price) VALUES (10, "pants", "trousers", "Small", 25.00);
+INSERT INTO store_database (id, category, item, size, price) VALUES (11, "pants", "trousers", "Medium", 25.00);
+INSERT INTO store_database (id, category, item, size, price) VALUES (12, "pants", "trousers", "Large", 25.00);
+INSERT INTO store_database (id, category, item, size, price) VALUES (13, "pants", "Skirt", "Small", 12.00);
+INSERT INTO store_database (id, category, item, size, price) VALUES (14, "pants", "Skirt", "Small", 12.00);
+INSERT INTO store_database (id, category, item, size, price) VALUES (15, "pants", "Skirt", "Small", 12.00);
+
+SELECT * FROM store_database ORDER BY price;
+SELECT item, MAX(price) FROM store_database;
