@@ -1,0 +1,55 @@
+Think about your favorite apps, and pick one that stores your data- like a game that stores scores, an app that lets you post updates, etc. Now in this project, you're going to imagine that the app stores your data in a SQL database (which is pretty likely!), and write SQL statements that might look like their own SQL.
+
+    CREATE a table to store the data.
+    INSERT a few example rows in the table.
+    Use an UPDATE to emulate what happens when you edit data in the app.
+    Use a DELETE to emulate what happens when you delete data in the app.
+
+
+CREATE TABLE authors (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fullname TEXT, genre TEXT, nationality TEXT);
+    
+INSERT INTO authors (fullname, genre, nationality) VALUES ("Stephen King", "Horror", "American");
+INSERT INTO authors (fullname, genre, nationality) VALUES ("Colleen Hoover", "YA fiction", "American");
+INSERT INTO authors (fullname, genre, nationality) VALUES ("Nicholas Sparks", "Romantic fiction", "American");
+INSERT INTO authors (fullname, genre, nationality) VALUES ("Delia Owens","Literary fiction", "American");
+INSERT INTO authors (fullname, genre, nationality) VALUES("Ernest Hemingway","Modernist", "American");
+INSERT INTO authors (fullname, genre, nationality) VALUES("James Patterson", "Thriller", "American");
+INSERT INTO authors (fullname, genre, nationality) VALUES
+("Lisa Gardner", "Thriller", "American");
+INSERT INTO authors (fullname, genre, nationality) VALUES("Clive Cussler", "Adventure", "American");
+INSERT INTO authors (fullname, genre, nationality) VALUES
+("Jude Deveraux", "Historical Romance", "American");
+
+CREATE TABLE sales (id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    author_ID INTEGER, books_sold INTEGER);
+INSERT INTO sales (author_ID, books_sold) VALUES( 1, 350000000);
+INSERT INTO sales (author_ID, books_sold) VALUES( 2, 4000000);
+INSERT INTO sales (author_ID, books_sold) VALUES( 3, 100000000);
+INSERT INTO sales (author_ID, books_sold) VALUES( 4, 10000000);
+INSERT INTO sales (author_ID, books_sold) VALUES( 5, 1000000000);
+INSERT INTO sales (author_ID, books_sold) VALUES( 6, 84000000);
+INSERT INTO sales (author_ID, books_sold) VALUES( 7, 783181);
+INSERT INTO sales (author_ID, books_sold) VALUES( 8, 100000000);
+INSERT INTO sales (author_ID, books_sold) VALUES( 9, 50000000);
+
+SELECT * FROM authors;
+/* Practicing joins*/ 
+SELECT authors.fullname, authors.genre, authors.nationality, sales.books_sold
+FROM authors
+JOIN sales
+ON authors.id=sales.author_id; 
+
+ /* updating books sold*/
+ 
+UPDATE sales SET books_sold = "5000000"
+WHERE id = 9;
+SELECT * FROM sales;
+
+DELETE FROM sales
+WHERE id = 9;
+DELETE FROM authors 
+WHERE id = 9;
+
+SELECT * FROM authors;
+SELECT * FROM sales;
